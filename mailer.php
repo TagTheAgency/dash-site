@@ -8,8 +8,9 @@
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         $message = trim($_POST["message"]);
         $region = trim($_POST["region"]);
-		$recipient = "charlie@tagtheagency.com";
-		$product = trim($_POST["product"]);;
+        $phone = trim($_POST["phone"]);
+		$product = trim($_POST["product"]);
+        $recipient = "charlie@tagtheagency.com";
 
         // Check that data was sent to the mailer.
         if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -24,7 +25,8 @@
 
         // Build the email content.
         $email_content = "Name: $name\n";
-        $email_content .= "Email: $email\n\n";
+        $email_content .= "Email: $email\n";
+        $email_content .= "Phone: $phone\n\n";
         $email_content .= "Message:\n$message\n";
 
         // Build the email headers.
