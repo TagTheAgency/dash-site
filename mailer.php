@@ -10,7 +10,7 @@
         $region = trim($_POST["region"]);
         $phone = trim($_POST["phone"]);
 		$product = trim($_POST["product"]);
-        $recipient = "charlie@tagtheagency.com";
+        $recipient = "dash@tagtheagency.com";
 
         // Check that data was sent to the mailer.
         if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
